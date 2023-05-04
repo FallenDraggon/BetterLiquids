@@ -1,0 +1,10 @@
+{
+  "name": "fd-better-liquids",
+  "displayName": "Better Liquids",
+  "author": "Fallen Dragon",
+  "description": "Mod based on the Factory Industry mod - Texture Pack from Xelo",
+  "version": "0.5",
+  "hidden": true,
+  "minGameVersion": "143",
+  "dependencies": []
+}
