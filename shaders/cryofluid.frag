@@ -55,10 +55,13 @@ void main(){
     float wave = abs(sin(coords.x * 1.1 + coords.y) + 0.1 * sin(2.5 * coords.x) + 0.15 * sin(3.0 * coords.y)) / 30.0;
     float noise = wave + (texture2D(u_noise, (coords) / NSCALE + vec2(btime) * vec2(-0.2, 0.8)).r + texture2D(u_noise, (coords) / NSCALE + vec2(btime * 1.1) * vec2(0.8, -1.0)).r) / 2.0;
    
-    
-		color += hm*lightcol*(1.0-fly.a) + (fly.a*fly.rgb * 0.2);
+    if(noise > 0.54 && noise < 0.57){
+		color += hm*lightcol*(1.0-fly.a) + (fly.a*fly.rgb * 0.4);
+		color*=(1.0-fly.a*0.4);
+    }else {
+        color += hm*lightcol*(1.0-fly.a) + (fly.a*fly.rgb * 0.2);
 		color*=(1.0-fly.a*0.2);
-   
+    }
 
     gl_FragColor = vec4(color.rgb, min(1.0,fullcol.a*6.0));
 }

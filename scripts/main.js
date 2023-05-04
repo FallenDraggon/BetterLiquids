@@ -256,6 +256,17 @@ function initShader(){
 		}}
 	);
 	addShader(Shaders.tar,"cryofluid");
+			
+	Shaders.tar = extendShader2("arkycite", {
+		apply(){
+			flyingbuffer.getTexture().bind(2);
+			this.super$apply();
+			this.setUniformi("u_flying", 2);
+			this.setUniformf("mscl",new Vec2(300.0,200.0));
+			this.setUniformf("tscal",0.2);
+		}}
+	);
+	addShader(Shaders.tar,"arkycite");
 	
 	Shaders.mud = extendShader2("mud", {
 		apply(){
